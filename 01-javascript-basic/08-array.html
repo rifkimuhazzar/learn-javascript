@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      // Array mulai dari index 0
+      // array.push(value) // menambahkan array dari luar variable
+      let names = [];
+      names.push("rifki", "muhazzar", "a", "b", "c");
+      names[5] = 10;
+      console.table(names);
+
+      // array.length // memunculkan panjang array dimulai dari 1
+      console.table(names.length);
+
+      // array[index] // memunculkan array dari index tertentu
+      console.table(names[4]);
+
+      // array[index] = value // mengubah isi array di index tertentu
+      names[4] = "i am";
+      console.table(names);
+
+      // delete array[index] // menghapus array dari index tertentu
+      delete names[3];
+      console.table(names);
+    </script>
+  </body>
+</html>

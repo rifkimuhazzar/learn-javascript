@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handler</title>
+  </head>
+  <body>
+    <input type="button" value="Click Me! (Event Target)" id="btn" />
+
+    <input type="button" value="Click Me! (Global Event Handler)" id="btn-2" />
+
+    <script>
+      // Event Target, bisa membuat event lebih dari 1
+      const button = document.getElementById("btn");
+      button.addEventListener("click", function () {
+        button.setAttribute("value", "You already clicked (Event Target)");
+        // console.info("Button");
+      });
+      button.addEventListener("click", function () {
+        console.info("Button (Event Target) di Click");
+      });
+
+      // Global Event Handler, hanya bisa membuat 1 event saja
+      const button2 = document.getElementById("btn-2");
+      button2.onclick = function () {
+        button2.setAttribute(
+          "value",
+          "You already clicked (Global Event Handler)"
+        );
+        console.info("Button (Global Event Handler) di Click");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <script>
+      // error digunakan untuk melihat codenya error dimana
+      // jika error maka code tidak akan dilanjutkan lagi
+      // Jika erorr nya menggunakan try catch statement maka code akan tetap dilanjutkan
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            // melempar error
+            throw new Error("Nilai parameter harus lebih dari 0");
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      // try catch statement
+      // jika tidak terjadi error maka catchnya tidak akan di eksekusi, jika terjadi maka sebaliknya dan kode selanjutnya tetap dijalankan
+      try {
+        console.info(MathUtil.sum());
+        console.info("Hello 1");
+      } catch (error) {
+        // message adalah property bawaan object yang di buat dari class error
+        // message akan mengambil pesan dari throw new error
+        console.info(`Terjadi Error : ${error.message}`);
+
+        // finally tidak wajib di tambahkan
+        // finally akan selalau dieksekusi baik terjadi error ataupun tidak
+      } finally {
+        console.info("Finally");
+      }
+
+      console.info("Hello 2");
+
+      // try finally tanpa catch
+      // bukan penanganan error
+      class Counter {
+        counter = 1;
+
+        increment() {
+          try {
+            return this.counter;
+          } finally {
+            this.counter++;
+          }
+        }
+      }
+
+      const counter = new Counter();
+      console.info(counter.increment());
+      console.info(counter.increment());
+      console.info(counter.increment());
+      console.info(counter.increment());
+      console.info(counter.increment());
+    </script>
+  </body>
+</html>

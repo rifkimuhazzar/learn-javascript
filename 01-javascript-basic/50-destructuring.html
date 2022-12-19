@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // destructuring adalah fitur untuk membongkar value-value di array atau object kedalam variable
+
+      // destructuring array
+      const names = ["Rifki", "Muhazzar", "a", "b", "c"];
+      // const firstName = names[0];
+      // const lastName = names[1];
+      const [firstName, lastName, ...others] = names;
+      console.info(firstName);
+      console.info(lastName);
+      console.info(others);
+
+      // destructuring object
+      const names2 = {
+        firstName2: "Rifki 2",
+        lastName2: "Muhazzar 2",
+        address: {
+          city: "Batam",
+          country: "Indonesia",
+        },
+        job: "Web Developer",
+      };
+
+      console.info(names2.firstName2);
+
+      const {
+        firstName2,
+        lastName2,
+        address: { city, country },
+        ...others2
+      } = names2;
+
+      console.info(firstName2);
+      console.info(lastName2);
+      console.info(city);
+      console.info(country);
+      console.info(others2);
+
+      // destructuring object di function
+      const person = {
+        firstName3: "Rifki 3",
+        lastName3: "Muhazzar 3",
+      };
+
+      function fName({
+        firstName3,
+        middleName3 = "Tidak Ada",
+        lastName3 = "A",
+      }) {
+        console.info(firstName3);
+        console.info(middleName3);
+        console.info(lastName3);
+      }
+
+      fName(person);
+
+      // destructuring array di function parameter
+      function sum([first, second]) {
+        return first + second;
+      }
+      console.info(sum([10, 20]));
+      console.info(sum([10, 15]));
+
+      {
+        // destructuring object 2 mengubah nama variabel
+        const names2 = {
+          firstName2: "Rifki 2",
+          lastName2: "Muhazzar 2",
+        };
+
+        const { firstName2: name1, lastName2: name2 = "A" } = names2;
+
+        console.info(name1);
+        console.info(name2);
+      }
+    </script>
+  </body>
+</html>

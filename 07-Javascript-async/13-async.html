@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASYNC</title>
+  </head>
+  <body>
+    <script>
+      // retrunnnya promise string
+      // cara manual
+      function getName() {
+        return new Promise(function (resolve, reject) {
+          resolve("Rifki");
+        });
+      }
+      getName().then((name) => console.info(name));
+
+      // secara otomatis functionnya dibungkus menjadi promise jika menggunakan async
+      // cara otomatis
+      async function getNameAsync() {
+        return "Rifki Muhazzar";
+      }
+      getNameAsync().then((name) => console.info(name));
+    </script>
+  </body>
+</html>

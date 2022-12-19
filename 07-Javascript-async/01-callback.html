@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback</title>
+  </head>
+  <body>
+    <p id="time"></p>
+
+    <script>
+      // asynchronous - menjalankan kode di baris setelahnya langsung tanpa harus menunggu kode di baris sebelumnya selesai / kode berjalan secara mandiri
+
+      // timeout - hanya dijalankan sekali
+      function addElement() {
+        const add = document.createElement("h1");
+        add.textContent = "Belajar JavaScript Asynchronous";
+
+        document.body.appendChild(add);
+      }
+
+      setTimeout(addElement, 5000);
+      console.info("JavaScript 1");
+
+      // interval - dijalankan terus-menerus secara periodic
+      function setTime() {
+        const time = document.getElementById("time");
+        time.textContent = new Date();
+      }
+
+      setInterval(setTime, 1000);
+      console.info("JavaScript 2");
+    </script>
+  </body>
+</html>

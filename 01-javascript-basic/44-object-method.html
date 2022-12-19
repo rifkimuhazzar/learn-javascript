@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // object method atau function di dalam object property
+      const person = {
+        name: "R",
+        sayHello: function (say) {
+          document.writeln(`<p>Hello ${say}<p>`);
+        },
+      };
+      person.sayHello("Rifki 1");
+
+      // menambahkan function ke dalam property object
+      const person2 = {
+        name: "R",
+      };
+      person2.sayHello = function (say) {
+        document.writeln(`<p>Hello ${say}<p>`);
+      };
+      person2.sayHello("Rifki 2");
+
+      // menambahkan function yang sudah jadi ke dalam property object
+      function sayHello(say) {
+        document.writeln(`Hi ${say}</p>`);
+      }
+      const person3 = {
+        name: "R",
+        sayHello: sayHello,
+      };
+      person3.sayHello("Rifki 3");
+    </script>
+  </body>
+</html>

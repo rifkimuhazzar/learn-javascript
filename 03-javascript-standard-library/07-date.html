@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      {
+        // membuat date saat ini
+        const date1 = new Date();
+        console.info(date1);
+
+        // membuat date thn-bln-tgl
+        const date2 = new Date(2022, 10, 10);
+        console.info(date2);
+
+        // membuat date thn-bln-tgl-jam-mnt-dtk-mls
+        const date3 = new Date(2022, 10, 10, 7, 32, 50, 2100);
+        console.info(date3);
+
+        // epoch & unix timestamp
+        const date4 = new Date(1668608271007);
+        console.info(date4);
+      }
+
+      {
+        // mendapatkan epoch atau unix timestamp
+
+        // saat ini 1
+        const date1 = Date.now();
+        console.info(date1);
+
+        // saat ini 2
+        const date1a = new Date();
+        console.info(date1a.getTime());
+
+        const date2 = new Date(2022, 10, 10);
+        console.info(date2.getTime());
+
+        const date3 = new Date(2022, 10, 10, 7, 32, 50, 2100);
+        console.info(date3.getTime());
+      }
+
+      {
+        // date parsing hanya bisa di ubah ke epoch/unix timestamp
+
+        // YYYY-MM-DDTHH:mm:ss.sssZ
+        // bisa tidak menggunakan timezone atau bisa juga hanya menggunakan tanggal
+        const time = Date.parse("2022-10-10T07:25:32.123+07:00");
+        console.info(time);
+
+        const date1 = new Date(time);
+        console.info(date1);
+      }
+
+      {
+        // getter dan setter pada date
+        const date = new Date();
+
+        // set
+        // date.setFullYear(2023);
+
+        // get
+        console.info(date.getFullYear());
+        console.info(date.getMonth());
+        console.info(date.getDate());
+        console.info(date.getHours());
+        console.info(date.getMinutes());
+        console.info(date.getSeconds());
+        console.info(date.getMilliseconds());
+        console.info(date.getTimezoneOffset());
+      }
+    </script>
+  </body>
+</html>

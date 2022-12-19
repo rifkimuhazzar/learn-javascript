@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>undefined</title>
+  </head>
+  <body>
+    <script>
+      // undefined // jika tidak memberikan nilai, tidak bisa menggunakan const
+      const name = 12;
+      if (name === undefined) {
+        console.info("Undefined");
+      } else {
+        console.info("Defined");
+      }
+
+      // undefined array
+      const name2 = ["Aa", "Bb", "Cc"];
+      if (name2[3] === undefined) {
+        console.info("Undefined");
+      } else {
+        console.info("Defined");
+      }
+
+      // undefined object
+      const name3 = { MyName: "Aa", Job: "Bb", Address: "Cc" };
+      if (name3["Job"] === undefined) {
+        console.info("Undefined");
+      } else {
+        console.info("Defined");
+      }
+    </script>
+  </body>
+</html>

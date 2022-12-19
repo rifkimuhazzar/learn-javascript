@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Selector</title>
+  </head>
+  <body>
+    <p id="paragraph">This is Text</p>
+
+    <ul>
+      <li class="odd">Satu</li>
+      <li id="menu-2">Dua</li>
+    </ul>
+
+    <ul>
+      <li class="odd">Tiga</li>
+      <li>Empat</li>
+      <li class="odd">Lima</li>
+    </ul>
+
+    <p class="first-name">Rifki</p>
+    <p class="last-name">Muhazzar</p>
+    <p class="role">Frontend</p>
+
+    <script>
+      // selector di dom mirip dengan selector di css
+
+      // universal selector
+      const elements = document.querySelectorAll("*");
+      console.info(elements);
+
+      // type selector
+      const lists = document.querySelectorAll("li");
+      console.info(lists);
+
+      // class selector
+      const listsOdd = document.querySelectorAll(".odd");
+      console.info(listsOdd);
+
+      // id selector
+      const menu2 = document.querySelectorAll("#menu-2");
+      console.info(menu2);
+
+      // attribute selector
+      const person = document.querySelectorAll("[class]");
+      console.info(person);
+
+      // operator attribute selector
+      const person2 = document.querySelectorAll("p[class$=name]");
+      console.info(person2);
+    </script>
+  </body>
+</html>

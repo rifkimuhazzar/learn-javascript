@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style</title>
+  </head>
+  <body>
+    <button id="btn-1" value="red">Red</button>
+    <button id="btn-2" value="green">Green</button>
+    <button id="btn-3" value="blue">Blue</button>
+
+    <div
+      id="canvas"
+      style="width: 250px; height: 250px; background-color: black"
+    ></div>
+
+    <script>
+      // property cssnya tidak bisa menggunakan tanda -, ubah dengan pascalCase
+      const buttons = document.querySelectorAll("button");
+      const canvas = document.getElementById("canvas");
+
+      for (let button of buttons) {
+        button.onclick = function () {
+          canvas.style.backgroundColor = button.getAttribute("value");
+        };
+      }
+    </script>
+  </body>
+</html>

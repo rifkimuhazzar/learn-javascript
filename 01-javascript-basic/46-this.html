@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // this // referensi ke object milik siapa
+      // this di global scope // merujuk pada window
+      console.info(this);
+
+      // this di local scope // merujuk pada window
+      function showThis() {
+        console.info(this);
+
+        function inner() {
+          console.log(this);
+        }
+
+        inner();
+      }
+      showThis();
+
+      // this di object // merujuk pada objectnya
+      const person = {
+        name: "R",
+        sayHello: function (value) {
+          console.info(this);
+          console.info(`Hi ${value} saya  ${this.name}`);
+        },
+      };
+      person.sayHello("A");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi String dan Number</title>
+  </head>
+  <body>
+    <script>
+      // parseInt(string) // mengkonversi dari string ke number bilangan bulat
+      // parseFloat(string) // mengkonversi dari string ke number bilangan pecahan
+      // Number(string) // mengkonversi dari string ke number bilangan bulat dan pecahan
+      let a = Number("100");
+      let b = 70;
+      let sum = a + b;
+      document.writeln(`<p>${sum}</p>`);
+
+      // angka.toString() // mengkonversi dari numnber ke string
+      a = 100;
+      b = 70;
+      let sum2 = a.toString() + b;
+      document.writeln(`<p>${sum2}</p>`);
+
+      // Not a Number
+      // isNaN (apaYangInginDiCek) // untuk mengecek apakah isi sebuah string adalah angka, mengeluarkan nilai boolean
+      document.writeln(`<p>${isNaN(sum2)}</p>`);
+    </script>
+  </body>
+</html>

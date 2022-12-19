@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node List</title>
+  </head>
+  <body>
+    <ul id="lists-1">
+      <li id="one">one</li>
+      <li id="two">two</li>
+      <li id="three">three</li>
+    </ul>
+
+    <ul id="lists-2">
+      <li id="four">four</li>
+      <li id="five">five</li>
+      <li id="six">six</li>
+    </ul>
+
+    <ul id="lists-3">
+      <li id="seven">seven</li>
+      <li id="eight">eight</li>
+      <li id="nine">nine</li>
+    </ul>
+
+    <script>
+      console.info(document.querySelectorAll("li"));
+
+      const lists1 = document.getElementById("lists-1").childNodes;
+      console.info(lists1);
+
+      console.info(document.getElementById("lists-2").childNodes);
+
+      // live
+      const lists3 = document.getElementById("lists-3");
+      const menu1 = lists3.childNodes;
+
+      lists3.appendChild(document.createElement("li"));
+      lists3.appendChild(document.createElement("li"));
+      console.info(menu1);
+
+      // static
+      const menu2 = document.querySelectorAll("li");
+      console.info(menu2);
+
+      lists3.appendChild(document.createElement("li"));
+    </script>
+  </body>
+</html>

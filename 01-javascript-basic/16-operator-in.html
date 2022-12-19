@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator in</title>
+  </head>
+  <body>
+    <script>
+      // in // untuk mengetahui apakah ada suatu property tertentu pada object, jika ada maka munculkan value-nya atau boolean
+      const student = {
+        firstName: "Rifki",
+        lastName: "Muhazzar",
+        age: 21,
+      };
+
+      if ("firstName" in student) {
+        document.writeln(student.firstName);
+      } else {
+        document.writeln("not found");
+      }
+
+      // in // untuk mengetahui apakah ada suatu property tertentu pada object, jika ada maka munculkan value-nya atau boolean
+      const person = {
+        firstName: "Rifki",
+        lastName: "Muhazzar",
+        age: 21,
+      };
+      let result = "firstName" in person;
+      document.writeln("<br>");
+      document.writeln(result);
+    </script>
+  </body>
+</html>

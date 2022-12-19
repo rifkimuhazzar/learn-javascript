@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Inheritance</title>
+  </head>
+  <body>
+    <script>
+      // lebih seperti mengcopy constructor function lain
+      function Employees(firstName) {
+        this.firstName = firstName;
+        this.sayHello = function (name) {
+          console.info(`Hi ${name}`);
+        };
+      }
+
+      // mewariskan/mengkopy constructor function lain
+      function Manager(firstNameX, lastName) {
+        this.lastName = lastName;
+
+        // memanggil constructor function lain
+        Employees.call(this, firstNameX);
+      }
+
+      const theName = new Manager("Rifki", "Muhazzar");
+      console.info(theName);
+    </script>
+  </body>
+</html>

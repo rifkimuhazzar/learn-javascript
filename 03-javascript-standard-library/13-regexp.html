@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegExp</title>
+  </head>
+  <body>
+    <script>
+      // fitur untuk mencari text dengan pola
+      // bisa dilakukan dengan 2 cara yaitu literal notation atau membuat object regexp // hasilnya sama saja
+      // balikannya berupa array
+
+      {
+        // membuat regexp ada 3 cara // hasilnya sama saja
+        const regexp1 = /rifki/;
+        const regexp2 = new RegExp("rifki");
+        const regexp3 = new RegExp(/rifki/);
+      }
+
+      {
+        // exec dan test
+        const name = "Rifki Muhazzar";
+        const regexp = /Rifki/;
+
+        const result = regexp.exec(name);
+        console.info(result);
+        console.info(regexp.exec("Tidak Ada"));
+
+        const test = regexp.test(name);
+        console.info(test);
+        console.info(regexp.test("Tidak Ada"));
+      }
+
+      {
+        // regexp modifier
+        // i - menjadi incase sensitive tidak peduli huruf kecil/besar
+        // g - pencarian di lakukan secara global, secara default setelah menemukan data, pencarian akan berhenti
+        // m - miltiline , pencarian dilakukan tiap baris/enter
+        // \n - enter
+        // Assertions, Character Class, Grups & Ranges, Quantifiers
+        const names = "rifki muhazzar\nRRifki Muhazzar";
+        console.info(names);
+
+        const regexp1 = /^.rifki/gim;
+        const regexp2 = /Muhazzar/gi;
+
+        // jika tidak menambahkan g di regexpnya maka akan infinite loop
+        let result;
+        while ((result = regexp1.exec(names)) !== null) {
+          console.info(result);
+        }
+
+        let result2;
+        while ((result2 = regexp2.exec(names)) !== null) {
+          console.info(result2);
+        }
+      }
+
+      {
+        // advance regexp
+        // Assertions, Character Class
+        // Grups & Ranges, Quantifiers
+        const names = "rifka rifki rifku rafke rafko";
+        const regexp = /rifk[aiueo]/gi;
+
+        let result;
+        while ((result = regexp.exec(names)) !== null) {
+          console.info(result);
+        }
+      }
+
+      {
+        // regular expression di string
+        const names = "rifka rifki rifku rafke rafko";
+
+        console.info(names.match(/rifk[aiueo]/gi));
+        console.info(names.search(/rifk[aiueo]/gi));
+        console.info(names.replace(/rifk[aiueo]/i, "saya"));
+        console.info(names.replaceAll(/rifk[aiueo]/gi, "saya"));
+        console.info(names.split(/r/gi));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Await</title>
+  </head>
+  <body>
+    <script>
+      // Promise<JSON Product>
+      function getProduct() {
+        const request = new Request("api/product.json", {
+          method: "GET",
+        });
+        const response = fetch(request);
+        return response.then((response) => response.json());
+      }
+      getProduct().then((products) => console.info(products));
+
+      // Promise<String Product Name>
+      //  Jika tidak menggunakan await
+      function getProductNamePromise() {
+        return new Promise(function (resolve, reject) {
+          getProduct()
+            .then((product) => resolve(product.product))
+            .catch((error) => resolve("Product Not Found (Promise)"));
+        });
+      }
+      getProductNamePromise().then((product) => console.info(product));
+
+      // await hanya bisa digunakan di dalam async function dan digunakan untuk mendapatkan value dari hasil promise
+      // lebih simple dari pada function yang di dalamnya menggunakan promise
+      // kodenya lebih mirip synchronous
+      // tidak menggunakan then/catch tetapi menggunakan try/catch
+      async function getProductNameAsync() {
+        try {
+          const product = await getProduct();
+          return product.product;
+        } catch {
+          return "Product Not Found (Async)";
+        }
+      }
+      getProductNameAsync().then((name) => console.info(name));
+    </script>
+  </body>
+</html>

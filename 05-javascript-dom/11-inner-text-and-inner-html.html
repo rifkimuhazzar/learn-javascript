@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innet Text and Inner HTML</title>
+  </head>
+  <body>
+    <p id="content">
+      <script>
+        console.info("Hello World");
+      </script>
+
+      <b>Rifki</b> Muhazzar <i>Frontend</i>
+    </p>
+
+    <div id="content-2"></div>
+
+    <script>
+      // innerText hanya mengambil text saja atau lebih pintar dari textContent
+      const content = document.getElementById("content");
+      console.info(content.textContent);
+      console.info(content.innerText);
+
+      // innerHTML mengambil semua element html
+      console.info(content.innerHTML);
+
+      // jika menambah element menggunakan innerHTML
+      // jika menggunakan innerText/textContent maka semuanya akan menjadi text saja
+      const content2 = document.getElementById("content-2");
+      content2.innerHTML = "<h1>ini inner html</h1> <p>Belajar JavaScript</p>";
+    </script>
+  </body>
+</html>

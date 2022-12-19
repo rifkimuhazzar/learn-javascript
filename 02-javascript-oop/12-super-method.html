@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Method</title>
+  </head>
+  <body>
+    <script>
+      // class method inheritance
+      class shape {
+        paint() {
+          console.info("Paint Shape");
+        }
+      }
+
+      // super bisa digunakan di dalam method untuk mengkopy isi method dari class parentnya
+      // nama method di class childnya boleh sama dengan class parentnya
+      // ini tidak wajib ditambahkan di dalam method di class childnya
+      // digunakan jika ingin mengcopy isi method dari parent classnya saja
+      class circle extends shape {
+        paint() {
+          super.paint();
+          console.info("Paint Circle");
+        }
+      }
+
+      const show = new circle();
+      show.paint();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for in</title>
+  </head>
+  <body>
+    <script>
+      // for in object // mengambil semua data property
+      const person = {
+        "First Name": "Rifki",
+        "Last Name": "Muhazzar",
+        "Web Developer": "Front-End",
+      };
+      for (const property in person) {
+        document.writeln(`<p>${property} : ${person[property]}</p>`);
+      }
+
+      // for in array // mengambil semua data index
+      // jarang di gunakan di array // array biasanya menggunakan for of
+      const nilai = [10, 20, 30, 40, 50];
+      for (const index in nilai) {
+        document.writeln(`<p>${index} : ${nilai[index]}</p>`);
+      }
+    </script>
+  </body>
+</html>

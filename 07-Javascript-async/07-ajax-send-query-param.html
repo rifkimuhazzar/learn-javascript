@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX Send Query Param</title>
+  </head>
+  <body>
+    <form style="display: flex; gap: 0.5rem">
+      <label for="search"
+        >Search:
+        <input type="text" name="search" id="search" />
+      </label>
+      <br />
+
+      <button type="button" id="search-btn">Search</button>
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+      function doSearch() {
+        const ajax = new XMLHttpRequest();
+
+        const param = new URLSearchParams();
+        param.append("search", document.getElementById("search").value);
+        param.append("filter", document.getElementById("search").value);
+
+        // ?${param.toString()}
+        ajax.open(
+          "GET",
+          `https://webhook.site/252b7fba-9e29-4dc9-bf87-24cd52636972?${param.toString()}`
+        );
+        ajax.onload = function () {
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+        ajax.send();
+      }
+
+      document.getElementById("search-btn").onclick = doSearch;
+    </script>
+  </body>
+</html>

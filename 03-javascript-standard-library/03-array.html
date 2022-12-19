@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      {
+        // forEach() untuk melakukan perulangan seperti for in/ for of, ini lebih populer digunakan daripada for in/for of
+        // array loop 1
+        const person = ["Rifki 1", "Muhazzar 1", "Web Developer 1"];
+
+        // anonymous function
+        person.forEach(function (value, index) {
+          console.info(`${index} : ${value}`);
+        });
+
+        // arrow function
+        person.forEach((value, index) => console.info(`${index} : ${value}`));
+
+        // arrow function lebih simple
+        person.forEach((value) => console.info(value));
+      }
+
+      {
+        // array queue // kebalikan dari stack
+        const queue = [];
+
+        // push() menambah data ke array
+        // dari atas ke bawah
+        queue.push("Rifki 2");
+        queue.push("Muhazzar 2");
+        queue.push("Web Developer 2");
+
+        console.info(queue);
+
+        // shift() mengambil data di array dan menghapusnya di array
+        // ini mengambil sesuai uruannya tadi atau sama seperti antrian
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+
+        console.info(queue);
+      }
+
+      {
+        // array stack // kebalikan dari queue
+        const stack = [];
+
+        // push() menambah data ke array
+        // bawah ke atas
+        stack.push("Rifki 3");
+        stack.push("Muhazzar 3");
+        stack.push("Web Developer 3");
+
+        console.info(stack);
+
+        // pop() mengambil data di array dan menghapusnya di array
+        // ini mengambil sesuai urutan tumpukannya tadi atau mengambil dari data yang paling akhir
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+
+        console.info(stack);
+      }
+
+      {
+        // array search
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.info(source.find((value) => value > 2));
+        console.info(source.findIndex((value) => value === 4));
+        console.info(source.includes(6));
+        console.info(source.indexOf(3));
+        console.info(source.lastIndexOf(5));
+      }
+
+      {
+        // array filter
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const even = numbers.filter((value) => value % 2 === 0);
+        console.info(even);
+        console.info(numbers.filter((value) => value % 2 === 1));
+      }
+
+      {
+        // array transform
+        const person = ["Rifki", "Muhazzar", "Frontend"];
+        const personUpper = person.map((value) => value.toUpperCase());
+        console.info(personUpper);
+
+        const reduce = person.reduce((first, second) => first + " " + second);
+        console.info(reduce);
+
+        console.info(
+          person.reduceRight((first, second) => first + " " + second)
+        );
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const result = numbers.reduce((first, second) => first + second);
+        console.info(result);
+      }
+    </script>
+  </body>
+</html>

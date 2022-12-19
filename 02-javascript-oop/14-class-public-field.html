@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Public Field</title>
+  </head>
+  <body>
+    <script>
+      // public field berada selevel dengan constructor/method
+      // public field bisa diakses dari luar class
+      class Person {
+        // public field (default)
+        firstName;
+        lastName;
+        balance = "78.000.000";
+
+        // constructor
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+      }
+
+      // membuat instance/object
+      const show = new Person("Rifki", "Muhazzar");
+      console.info(show);
+    </script>
+  </body>
+</html>

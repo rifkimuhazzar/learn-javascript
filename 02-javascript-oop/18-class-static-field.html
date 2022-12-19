@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Static Field</title>
+  </head>
+  <body>
+    <script>
+      // static filed digunakan agar filed di dalam class bisa di akses secara global, tidak diakses dari instace object lagi
+      class Person {
+        firstName = "Rifki";
+        static lastName = "Muhazzar";
+        static job = "Web Developer";
+      }
+
+      const show = new Person();
+      console.info(show);
+
+      // mengganti isi static field dari sebuah class
+      Person.job = "Frontend Developer";
+
+      // memunculkan static field dari sebuah class
+      console.info(Person.lastName);
+      console.info(Person.job);
+    </script>
+  </body>
+</html>

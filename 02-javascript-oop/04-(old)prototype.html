@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <script>
+      // prototype constructor function
+      function MyName(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(
+            `Hello ${name} My Name Is ${this.firstName} ${this.lastName}`
+          );
+        };
+      }
+
+      // prototype inheritance
+      // instance - prototype MyName - prototype object
+      // menambahkan property ke protype
+      MyName.prototype.sayBye = function () {
+        console.info("Good Bye");
+      };
+
+      // object instance / turunan dari prototype
+      const rifki = new MyName("Rifki 1", "Muhazzar 1");
+      // menambah property/method ke object instancenya
+      rifki.sayBye2 = function () {
+        console.info("Good Bye 2");
+      };
+
+      const muhazzar = new MyName();
+
+      console.info(rifki);
+      console.info(muhazzar);
+
+      rifki.sayBye();
+      rifki.sayBye2();
+    </script>
+  </body>
+</html>

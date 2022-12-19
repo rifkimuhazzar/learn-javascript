@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function jadi value
+      function sayHello(name) {
+        document.writeln(`<p>Hello ${name}</p>`);
+      }
+      const say = sayHello;
+      sayHello("Rifki 1");
+      say("Rifki 2");
+
+      // function jadi parameter
+      function getName(name2) {
+        name2("rifki 3");
+      }
+      getName(sayHello);
+      getName(say);
+    </script>
+  </body>
+</html>

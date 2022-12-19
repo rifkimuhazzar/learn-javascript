@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With Web Worker</title>
+  </head>
+  <body>
+    <button id="btn-start">Start</button>
+    <script>
+      // JavaSctipt adalah single thread (single proses)
+      // 1 thread mengerjakan lebih dari 1 pekerjaan (concurrent)
+      // beberapa thread mengerjakan 1 pekerjaan atau beberapa pekerjaan (parallel)
+      // untuk membuat proses secara parallel, bisa menggunakan Web Worker
+      const worker = new Worker("script/worker.js");
+      worker.addEventListener("message", function (event) {
+        console.info(event.data);
+      });
+
+      document.getElementById("btn-start").onclick = function () {
+        worker.postMessage(100000);
+      };
+    </script>
+  </body>
+</html>

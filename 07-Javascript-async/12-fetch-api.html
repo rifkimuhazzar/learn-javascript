@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >Username:
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <label for="password"
+        >Password:
+        <input type="password" name="password" id="password" />
+      </label>
+      <br />
+      <button type="button" id="login">Login</button>
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+      // lebih modern dan lebih mudah dari AJAX
+      // Fetch API sudah menggunakan promise
+      function doLogin() {
+        const request = new Request(
+          "	https://webhook.site/252b7fba-9e29-4dc9-bf87-24cd52636972",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+            },
+            body: JSON.stringify({
+              username: document.getElementById("username").value,
+              password: document.getElementById("password").value,
+            }),
+          }
+        );
+
+        // response fetch api berupa promise yang isinya object response
+        const response = fetch(request);
+        // console.info(response);
+        response
+          .then((response) => response.json())
+          .then((json) => {
+            document.getElementById("response").textContent = json.success;
+          });
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

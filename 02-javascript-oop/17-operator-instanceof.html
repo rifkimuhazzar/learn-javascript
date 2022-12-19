@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instanceof</title>
+  </head>
+  <body>
+    <script>
+      // instanceof digunakan untuk mengecek apakah sebuah object adalah instance dari class tertentu atau turunan dari class tertentu
+      // instanceof menghasilkan nilai boolean
+      class Employee {}
+
+      class Manager extends Employee {}
+
+      const employee = new Employee();
+      const manager = new Manager();
+
+      console.info(employee instanceof Employee); // true
+      console.info(employee instanceof Manager); // false
+
+      console.info(manager instanceof Employee); //true
+      console.info(manager instanceof Manager); //true
+    </script>
+  </body>
+</html>

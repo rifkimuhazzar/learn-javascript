@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aggregating Modules</title>
+  </head>
+  <body>
+    <script type="module">
+      // import dari sebuah file, dari file tersebut mengambil export dari file lain yang sudah di export terlebih dahulu
+
+      /* import {
+        sayHello,
+        sayGoodBye,
+        name,
+        Person,
+        name2,
+        sum,
+        Company,
+      } from "/scripts/09-aggregate.js"; */
+
+      import * as rifki from "/scripts/09-aggregate.js";
+
+      rifki.sayHello("Rifki");
+      rifki.sayGoodBye("Rifki");
+      console.info(rifki.name);
+
+      const person = new rifki.Person("Rifki");
+      person.sayHi("Muhazzar");
+      console.info(person);
+
+      console.info(rifki.name2);
+      const sum = rifki.sum(10, 10);
+      console.info(sum);
+
+      console.info(rifki.sum(5, 5));
+      const company = new rifki.Company();
+      console.info(company);
+
+      console.info(new rifki.Company());
+    </script>
+  </body>
+</html>

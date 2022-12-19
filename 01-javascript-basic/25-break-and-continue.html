@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break and Continue</title>
+  </head>
+  <body>
+    <script>
+      // break; // menghentikan jika tujuannya tercapai
+      let counter = 1;
+      while (true) {
+        document.writeln(`<p>Angka ke ${counter}</p>`);
+        counter++;
+
+        if (counter > 5) {
+          break;
+        }
+      }
+      document.writeln("<hr>");
+
+      // continue; // melanjutkan terus hingga tujuannya tercapai
+      for (let angka = 1; angka <= 20; angka++) {
+        if (angka % 2 === 0) {
+          continue;
+        }
+        document.writeln(`<p>Angka Ganjil ke ${angka}</p>`);
+      }
+    </script>
+  </body>
+</html>

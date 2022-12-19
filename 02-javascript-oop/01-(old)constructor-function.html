@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Function</title>
+  </head>
+  <body>
+    <script>
+      // cara lama untuk membuat oop dengan constructor function
+      // contructur function bertindak sebagai class
+      // nama function biasakan diawali dengan huruf besar agar membedakannya dengan function biasa
+      function MyName() {
+        // property di function
+        this.firstName = "";
+        this.lastName = "";
+
+        // method/function di constructor function
+        this.sayHello = function (name) {
+          console.info(
+            `Hello ${name} My Name Is ${this.firstName} ${this.lastName}`
+          );
+        };
+      }
+
+      // gunakan kata kunci new untuk memanggil function
+      const rifki = new MyName();
+      rifki.firstName = "Rifki 1";
+      rifki.lastName = "Muhazzar 1";
+      rifki.sayHello("A");
+
+      const muhazzar = new MyName();
+      muhazzar.firstName = "Rifki 2";
+      muhazzar.lastName = "";
+
+      console.info(rifki);
+      console.info(muhazzar);
+    </script>
+  </body>
+</html>

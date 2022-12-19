@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // fcuntion* // yield
+      // datanya mirip array bisa di iterasi
+      // generator bersifat lazy artinya akan di eksekusi satu per satu
+      function* name() {
+        yield "Rifki";
+        yield "Muhazzar";
+        yield "Front End";
+      }
+      let takeInfo = name();
+      for (const showInfo of takeInfo) {
+        console.log(showInfo);
+      }
+
+      // lazy
+      function* angkaGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.log(`Lazy ${i}`);
+            yield i;
+          }
+        }
+      }
+      let result = angkaGanjil(5);
+      // for (let showInfo of result) {
+      //   console.info(showInfo);
+      // }
+      // manggil satu-satu
+      console.info(result.next().value);
+      console.info(result.next().value);
+      console.info(result.next().value);
+
+      // Eager // ini bukan funcion generator
+      function angkaGanjilArray(value) {
+        const result = [];
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.log(`Eager ${i}`);
+            result.push(i);
+          }
+        }
+        return result;
+      }
+      let arrayGanjil = angkaGanjilArray(10);
+      for (let showInfo of arrayGanjil) {
+        console.info(showInfo);
+      }
+    </script>
+  </body>
+</html>

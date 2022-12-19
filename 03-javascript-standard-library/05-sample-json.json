@@ -1,0 +1,6 @@
+{
+  "firstName": "Rifki",
+  "lastName": "Muhazzar",
+  "address": { "country": "Indonesia", "city": "Batam" },
+  "hobbies": ["Skydiving", "Wingsuit Flying", "Bungee Jumping"]
+}

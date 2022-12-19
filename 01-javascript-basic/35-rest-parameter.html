@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // modern
+      // ...valuenya
+      // ini digunakan di akhir parameter atau bisa sendiri jika hanya ada 1 parameter
+      // datanya akan di ubah menjadi array
+      function sum(name, ...value) {
+        let total = 0;
+        for (const item of value) {
+          total += item;
+        }
+        document.writeln(`<p>${name} is ${total}</p>`);
+      }
+      sum("Manggo", 10, 20, 30, 50);
+      sum("Coconut", 10, 15, 17, 25);
+      const value = [2, 4, 6, 8, 10];
+      sum("Apple", ...value);
+
+      // old // tidak direcomendasikan
+      function oldSum() {
+        let total2 = 0;
+        for (const element2 of arguments) {
+          total2 += element2;
+        }
+        document.writeln(`<p>Total is ${total2}</p>`);
+      }
+      oldSum(1, 2, 3, 4, 5);
+    </script>
+  </body>
+</html>

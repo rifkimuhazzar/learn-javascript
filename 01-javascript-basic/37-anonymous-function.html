@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function tanpa nama
+      // function dalam variabel
+      let say = function (firstName, lastName) {
+        document.writeln(`<p>Hi ${firstName} ${lastName}</p>`);
+      };
+      say("Rifki 1", "Muhazzar 1");
+      say("Rifki 2", "Muhazzar 2");
+
+      // function dalam parameter
+      function fName(callBack) {
+        callBack("Rifki", "Muhazzar 9", 21);
+      }
+      fName(say);
+      fName(function (firstName, lastName, age) {
+        document.writeln(`<p>Hi ${firstName} ${lastName} ${age}</p>`);
+      });
+    </script>
+  </body>
+</html>

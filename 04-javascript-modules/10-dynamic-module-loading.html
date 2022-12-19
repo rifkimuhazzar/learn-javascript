@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Module Loading</title>
+  </head>
+  <body>
+    <input type="text" id="name" />
+    <button id="btn">SEND</button>
+
+    <script type="module">
+      // Dynamic Module Loading digunakan agar module yang dibutuhkan saja yang akan di load
+      // ini bisa menghemat bandwith
+      // gunakan import(/folder/dst)
+
+      document.getElementById("btn").onclick = function () {
+        const name = document.getElementById("name").value;
+
+        // returnya promise
+        import("/scripts/10-alert.js").then(function (modul) {
+          modul.alertHi(name);
+        });
+      };
+    </script>
+  </body>
+</html>

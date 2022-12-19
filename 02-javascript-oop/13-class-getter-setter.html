@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Getter Setter</title>
+  </head>
+  <body>
+    <script>
+      // method, getter, setter berada di prototype
+      // class/constructor berada di instance
+      class Person {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        // mengambil nilai dari dalam class
+        get fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+
+        // menyetel nilainya, mengambil dari luar scope
+        set fullName(value) {
+          const result = value.split(" ");
+          this.firstName = result[0];
+          this.lastName = result[1];
+        }
+      }
+
+      // memberi nilai pada constructor
+      const show = new Person("Rifki 1", "Muhazzar 1");
+      console.info(show);
+
+      // menampilkan nilai getter
+      console.info(show.fullName);
+
+      // menyetel nilai setter
+      show.fullName = "Rifki-2 Muhazzar-2";
+      console.info(show.fullName);
+    </script>
+  </body>
+</html>

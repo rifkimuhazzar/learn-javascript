@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node</title>
+  </head>
+  <body>
+    <ul id="lists">
+      <li id="first">first</li>
+      <li id="second">second</li>
+      <li id="third">third</li>
+      <li id="fourth">fourth</li>
+      <li id="fifth">fifth</li>
+    </ul>
+
+    <script>
+      const lists = document.getElementById("lists");
+      console.info(lists);
+
+      // instance property
+      console.info(lists.childNodes);
+
+      const list = document.getElementById("second");
+
+      // instance property
+      console.info(list);
+      console.info(list.textContent);
+      console.info(list.previousSibling);
+      console.info(list.nextElementSibling);
+
+      // instance method
+      lists.removeChild(document.getElementById("fourth"));
+      lists.removeChild(document.getElementById("second"));
+    </script>
+  </body>
+</html>

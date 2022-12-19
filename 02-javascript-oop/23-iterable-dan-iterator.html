@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iterable dan Iterator</title>
+  </head>
+  <body>
+    <script>
+      // ini teknik yang lebih advance
+      // jarang di implementasi secara manual
+      // rata-rata pakai yang sudah ada
+      // jika mengikuti kontrak iterable, maka object yang di buat bisa dilakukan iterasi menggunakan for of
+
+      // kontrak iterator result
+      // done adalah parameter bawaan dan bernilai boolean
+      class CounterIteratorResult {
+        constructor(value, done) {
+          this.value = value;
+          this.done = done;
+        }
+      }
+
+      // kontrak iterator
+      class CounterIterator {
+        constructor(value, max) {
+          this.value = value;
+          this.max = max;
+        }
+        next() {
+          try {
+            if (this.value > this.max) {
+              return new CounterIteratorResult(this.value, true);
+            } else {
+              return new CounterIteratorResult(this.value, false);
+            }
+          } finally {
+            this.value++;
+          }
+        }
+      }
+
+      // kontrak iterable
+      class Counter {
+        constructor(value, max) {
+          this.value = value;
+          this.max = max;
+        }
+
+        // mengembalikan iterator
+        [Symbol.iterator]() {
+          return new CounterIterator(this.value, this.max);
+        }
+      }
+
+      // menggunakannya
+      const counter = new Counter(1, 15);
+      for (const element of counter) {
+        console.info(element);
+      }
+    </script>
+  </body>
+</html>

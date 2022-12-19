@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <div id="location"></div>
+
+    <script>
+      const content = document.getElementById("content");
+      const locationDiv = document.getElementById("location");
+
+      // setelah object window adalah variable, seperti screen, location, dll
+      const width = window.screen.width;
+      const height = window.screen.height;
+      const url = window.location;
+
+      content.innerText = `Width : ${width} x Height : ${height}`;
+      locationDiv.textContent = url;
+    </script>
+  </body>
+</html>

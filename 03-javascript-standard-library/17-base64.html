@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base64</title>
+  </head>
+  <body>
+    <script>
+      // base64 untuk encode/decode
+      // btoa(value) - encode ke base64 dari value
+      // atob(encoded) - decode dari base64 ke value
+      const original = "Rifki Muhazzar";
+      console.info(original);
+
+      const encoded = btoa(original);
+      console.info(encoded);
+
+      const decoded = atob(encoded);
+      console.info(decoded);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Inheritance</title>
+  </head>
+  <body>
+    <script>
+      // inheritance hanya bisa dilakukan ke 1 parent prototype saja
+      class Employee {
+        sayHello(name) {
+          console.info(`Hi ${name}, saya employee ${this.name}`);
+        }
+      }
+
+      // inheritance class menggunakan extends
+      class Manager extends Employee {
+        sayHello(name) {
+          console.info(`Hi ${name}, saya manager ${this.name}`);
+        }
+      }
+
+      // memanggil class, gunakan new sebelum nama class
+      const rifki = new Employee();
+      rifki.name = "Rifki 1"; // karena di class employe belum ada field name maka di buat dari sini
+      rifki.sayHello("A");
+      console.info(rifki);
+
+      const muhazzar = new Manager();
+      muhazzar.name = "Muhazzar 1";
+      muhazzar.sayHello("B");
+      console.info(muhazzar);
+    </script>
+  </body>
+</html>

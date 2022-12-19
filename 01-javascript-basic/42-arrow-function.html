@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Arrow function tidak bisa menggunakan - fitur arguments object - function generator - this - super
+      // =>
+      const sayHello = (name) => {
+        const say = `<p> Hello ${name}`;
+        document.writeln(say);
+      };
+      sayHello(`Rifki Muhazzar</p>`);
+
+      // => . jika hanya 1 parameter bisa tanpa tanda ()
+      const sayHi = (name) => document.writeln(`<p>Hi ${name}`);
+      sayHi(`Rifki</p>`);
+
+      // (return value) =>
+      const sum = (a, b) => {
+        return a + b;
+      };
+      document.writeln(`<p>${sum(86, 89)}<p>`);
+
+      // (simple without return value) =>
+      const sum2 = (a, b) => a + b;
+      document.writeln(`<p>${sum(86, 89)}<p>`);
+
+      // => . arrow function sebagai parameter
+      function getName(callback) {
+        callback("Rifki");
+      }
+      getName((name) => document.writeln(`Halo ${name}`));
+    </script>
+  </body>
+</html>

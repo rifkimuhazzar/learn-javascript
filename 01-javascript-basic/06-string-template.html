@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      // ``
+      const firstName = "Rifki";
+      const lastName = "Muhazzar";
+      const template = `Name : ${firstName} ${lastName}`;
+      console.info(template);
+
+      // Expression
+      const nilai = 90;
+      const template2 = `Name : ${template}, lulus : ${nilai > 78}`;
+      console.info(template2);
+
+      // Multi Line
+      const example = `nama saya adalah
+      rifki muhazzar`;
+      console.info(example);
+    </script>
+  </body>
+</html>

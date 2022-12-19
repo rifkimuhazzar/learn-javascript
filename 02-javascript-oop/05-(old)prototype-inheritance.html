@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype Inheritance</title>
+  </head>
+  <body>
+    <script>
+      // urutannya dari instance - protoype yg di buat - prototype object/default
+      function Employee(name) {
+        this.name = name;
+      }
+      function Manager(name) {
+        this.name = name;
+      }
+
+      // mewariskan/mengcopy dari prototype ke prototype
+      Manager.prototype = Object.create(Employee.prototype);
+
+      // menambah property/method ke prototype
+      Manager.prototype.sayHello = function (name) {
+        console.info(`Hi ${name} My Name Is Manager ${this.name}`);
+      };
+      Employee.prototype.sayHello = function (name) {
+        console.info(`Hi ${name} My Name Is Employee ${this.name}`);
+      };
+
+      // memanggil instancenya
+      const employee = new Employee("Rifki 1");
+      employee.sayHello("A");
+      const manager = new Manager("Rifki 2");
+      manager.sayHello("B");
+
+      console.info(employee);
+      console.info(manager);
+    </script>
+  </body>
+</html>

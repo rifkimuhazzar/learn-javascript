@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // #1 debugger untuk mencari kesalahan pada program
+      // debugger;
+      function getName(firstName, middleName, lastName) {
+        const fullName = `${firstName} ${lastName} ${lastName}`;
+        return fullName;
+      }
+      const name = getName("Rifki", "Tidak ada", "Muhazzar");
+      console.info(name);
+
+      // #2
+      function sum(...numbers) {
+        // debugger;
+        let i = 0;
+        for (const number of numbers) {
+          i += number;
+        }
+
+        return i;
+      }
+      console.info(sum(1, 1, 1, 1, 1));
+    </script>
+  </body>
+</html>

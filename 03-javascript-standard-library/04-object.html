@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Object.freeze and Object.seal
+        const person = {
+          firstName: "Rifki",
+          lastName: "Muhazzar",
+        };
+
+        Object.freeze(person); // object tidak bisa diubah/ditambah/dihapus
+        // Object.seal(person); // object tidak bisa ditambah/dihapus tetapi bisa diubah
+
+        person.firstName = "Rifki 2";
+        person.job = "Frontend";
+        delete person.lastName;
+
+        console.info(person);
+      }
+
+      {
+        // object assign
+        const person = {
+          firstName: "Rifki",
+          lastName: "Muhazzar",
+        };
+        const person2 = {
+          firstName2: "Rifki 2",
+          lastName2: "Muhazzar 2",
+        };
+        const person3 = {
+          firstName3: "Rifki 3",
+          lastName3: "Muhazzar 3",
+        };
+
+        // object pertama yang menjadi wadahnya
+        // jika di wadahnya ada property yang sama maka akan di timpa
+        Object.assign(person, person2, person3);
+        console.info(person);
+      }
+
+      {
+        // object property name and value //
+        const person = {
+          firstName: "Rifki",
+          lastName: "Muhazzar",
+        };
+
+        // balikannya dalam bentuk array
+        console.info(Object.values(person));
+        console.info(Object.getOwnPropertyNames(person));
+      }
+    </script>
+  </body>
+</html>

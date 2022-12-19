@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membuat Class Error</title>
+  </head>
+  <body>
+    <script>
+      // Error adalah sebuah class bawaan dari javascript
+      // bisa juga membuat class error sendiri/manual
+      class ValidationError extends Error {
+        // message adalah property bawaan dari class error
+        constructor(message, field) {
+          super(message);
+          this.field = field;
+        }
+      }
+
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            // jika membuat class error secara manual kita bisa menyisipkan informasi tambahan seperti menambahkan sebuah field untuk mengetahui error atau tidak
+            throw new ValidationError(
+              "Nilai parameter harus lebih dari 0",
+              "numbers"
+            );
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      try {
+        console.info(MathUtil.sum());
+        console.info("Hello");
+      } catch (error) {
+        if (error instanceof ValidationError) {
+          console.error(
+            `Terjadi error di field ${error.field} dengan error : ${error.message}`
+          );
+        } else {
+          console.error(`Terjadi Error di : ${error.message}`);
+        }
+      }
+    </script>
+  </body>
+</html>

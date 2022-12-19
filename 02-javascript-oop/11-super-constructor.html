@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Constructor</title>
+  </head>
+  <body>
+    <script>
+      // class constructor inheritance
+      class Employee {
+        constructor(name) {
+          this.name = name;
+        }
+
+        sayHello(name) {
+          console.info(`Hi ${name} my name is employee ${this.name}`);
+        }
+      }
+
+      // jika parent class nya mempunyai constructor dan child classnya tidak punya maka akan tetap di warisakan
+      // jika class parent dan childnya memiliki constructor maka wajib menambahkan super di dalam constructor childnya
+      // jika class class parentnya tidak memiliki constructor tetapi class childnya memiliki constructor maka tetap wajib menambahkan super di dalam constructornya
+      class Manager extends Employee {
+        constructor(name, lastName) {
+          super(name); // parameternya harus sama dengan parent / boleh kosong
+          this.lastName = lastName;
+        }
+
+        sayHello(name) {
+          console.info(`Hi ${name} my name is manager ${this.name}`);
+        }
+      }
+
+      const person1 = new Employee("Rifki 1");
+      person1.sayHello("A");
+
+      const person2 = new Manager("Rifki 2", "Muhazzar 2");
+      person2.sayHello("B");
+
+      console.info(person1);
+      console.info(person2);
+    </script>
+  </body>
+</html>

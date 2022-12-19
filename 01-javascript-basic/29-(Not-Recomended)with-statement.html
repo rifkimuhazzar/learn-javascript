@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>with statement</title>
+  </head>
+  <body>
+    <script>
+      // with // digunakan untuk mengakses sebuah value tanpa menyebut datanya
+      // tidak direkomendasikan karena ambigu
+      const name = {
+        firstName: "Rifki",
+        lastName: "Muhazzar",
+        webDeveloper: "Front-End",
+      };
+      document.writeln(`<p>${name.firstName}</p>`);
+      document.writeln(`<p>${name.lastName}</p>`);
+      document.writeln(`<p>${name.webDeveloper}</p>`);
+
+      const firstName = "Saya";
+
+      // with() // masukan scope/nama-variable nya didalam kurung
+      with (name) {
+        document.writeln(`<p>${firstName}</p>`);
+        document.writeln(`<p>${lastName}</p>`);
+        document.writeln(`<p>${webDeveloper}</p>`);
+      }
+
+      document.writeln(`<p>${firstName}</p>`);
+    </script>
+  </body>
+</html>

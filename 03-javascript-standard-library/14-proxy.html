@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proxy</title>
+  </head>
+  <body>
+    <script>
+      // proxy perlu menggunakan handler, di dalam handler kita membuat function yang disebut interceptor ini digunakan ketika mengambil data atau mengubah data ke target
+      const target = {
+        role: "Web Developer",
+      };
+
+      const handler = {
+        get: function (target, property) {
+          console.info(`Access Property : ${property}`);
+          return target[property];
+        },
+
+        set: function (target, property, value) {
+          console.info(`Add/Change Property : ${property} - ${value}`);
+
+          if (value === null) {
+            // throw new Error("Tidak boleh null");
+
+            target[property] = "Data tidak boleh null";
+          } else {
+            target[property] = value;
+          }
+        },
+      };
+
+      const proxy = new Proxy(target, handler);
+
+      // set
+      proxy.firstName = "Rifki";
+      proxy.lastName = null;
+
+      // get
+      console.info(proxy.firstName);
+      console.info(proxy.lastName);
+      console.info(proxy.role);
+      console.info(target);
+    </script>
+  </body>
+</html>

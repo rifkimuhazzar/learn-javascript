@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflect</title>
+  </head>
+  <body>
+    <script>
+      // menambah data, mengecek isi sebuah object, atau memanggil function dari sebuah object tanpa harus menyentuh objectnya
+      const person = {};
+
+      Reflect.set(person, "firstName", "Rifki");
+      Reflect.set(person, "lastName", "Muhazzar");
+
+      console.info(person);
+
+      console.info(Reflect.get(person, "firstName"));
+      console.info(Reflect.get(person, "lastName"));
+      console.info(Reflect.get(person, "role"));
+
+      console.info(Reflect.has(person, "firstName"));
+      console.info(Reflect.has(person, "lastName"));
+      console.info(Reflect.has(person, "role"));
+    </script>
+  </body>
+</html>

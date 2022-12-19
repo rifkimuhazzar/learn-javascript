@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for of</title>
+  </head>
+  <body>
+    <script>
+      // for of // mengambil value dari semua index di array
+      // tidak bisa digunakan pada tipe data object kerena bukan iterable
+      // hanya bisa digunakan pada iterable object seperti array, string dan lain-lain
+      // jika di array hanya menampilkan value arraynya saja, tidak menampilkan indexnya
+      // jika di string akan menampilkan setiap hurufnya
+
+      // Array
+      const name = ["Rifki", "Muhazzar", 1, 2];
+      for (const name2 of name) {
+        document.writeln(`<p>${name2}</p>`);
+      }
+
+      // String
+      const fullName = "Rifki Muhazzar";
+      for (const fullName2 of fullName) {
+        document.writeln(`<p>${fullName2}</p>`);
+      }
+    </script>
+  </body>
+</html>

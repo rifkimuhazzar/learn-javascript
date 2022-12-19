@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export Default</title>
+  </head>
+  <body>
+    <script type="module">
+      // export default hanya bisa 1 dalam 1 file
+      // menggabungkan export default dan export named dalam 1 file tidak direkomendasikan
+      // disarankan sebisa mungkin menggunakan export named
+
+      // bisa juga menggunakan alias seperti di bawah
+      // import { default as alias, dst } from "/scripts/namafile";
+      import hi from "/scripts/07-default-function.js";
+      import say, { role } from "/scripts/07-default-variable.js";
+      import hello from "/scripts/07-default-class.js";
+
+      hi("Rifki");
+
+      console.info(say);
+      console.info(role);
+
+      const person = new hello("Rifki");
+      person.sayHello();
+    </script>
+  </body>
+</html>

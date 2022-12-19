@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // get
+      const person = {
+        firstName: "Rifki",
+        lastName: "Muhazzar",
+        get fullName() {
+          console.info(`Hi ${person.firstName} ${this.lastName}`);
+        },
+      };
+      person.firstName = "R1";
+      person.fullName;
+
+      // set
+      const person2 = {
+        firstName: "Rifki",
+        lastName: "Muhazzar",
+        set fullName(value) {
+          const array = value.split(" ");
+          person2.firstName = array[0];
+          this.lastName = array[1];
+        },
+      };
+      person2.fullName = "R2 M2";
+      console.info(person2);
+
+      person2.fullName = "Rifki2 Muhazzar2";
+      console.table(person2);
+    </script>
+  </body>
+</html>

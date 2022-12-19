@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encode</title>
+  </head>
+  <body>
+    <script>
+      // encodeURI(value) - melakukan encode value, namun karakter yang dipesan di URL tidak akan di ubah ;,/?:@&=+$#
+      // encodeURIComponent(value) - melakukan encode value semua karakter
+      // decodeURI(encoded) - melakukan decode value hasil encodeURI(value)
+      // DecodeURIComponent(encode) - melakukan decode value hasil encodeURIComponent(value)
+
+      {
+        // encode uri dan decode uri
+        const url = "https://contoh/?name=Rifki Muhazzar Frontend";
+        console.info(url);
+
+        const encoded = encodeURI(url);
+        console.info(encoded);
+
+        const decoded = decodeURI(encoded);
+        console.info(decoded);
+      }
+
+      {
+        // encode uri component dan decode uri component
+        const url = "https://contoh/?name=";
+        const value = "Rifki&Muhazzar=Frontend";
+        console.info(url + value);
+
+        const encoded = encodeURIComponent(value);
+        console.info(url + encoded);
+
+        const decoded = decodeURIComponent(encoded);
+        console.info(url + decoded);
+      }
+    </script>
+  </body>
+</html>

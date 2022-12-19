@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=c, initial-scale=1.0" />
+    <title>Module Object</title>
+  </head>
+  <body>
+    <script type="module">
+      // mengimport semua export dari sebuah module dengan menjadikannya sebuah object
+      import * as rifki from "/scripts/08-module-object.js";
+
+      console.info(rifki.firstName);
+      console.info(rifki.lastName);
+      console.info(rifki.role);
+
+      rifki.sayHi("Rifki");
+
+      const person = new rifki.Person("Rifki");
+      console.info(person);
+    </script>
+  </body>
+</html>

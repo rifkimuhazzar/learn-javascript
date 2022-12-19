@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parameter in Constructor Function</title>
+  </head>
+  <body>
+    <script>
+      // cara yang lebih simple dari file 01
+      function MyName(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(
+            `Hello ${name} My Name Is ${this.firstName} ${this.lastName}`
+          );
+        };
+      }
+
+      const rifki = new MyName("Rifki 1", "Muhazzar 1");
+      rifki.sayHello("A");
+
+      const muhazzar = new MyName();
+
+      console.info(rifki);
+      console.info(muhazzar);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      // set mirip seperti array, hanya saja datanya selalu unique
+      // jika menambahkan data yang sama, maka akan diterima satu saja
+      // set mengimplementasikan contract iterable
+      const person = new Set();
+
+      person.add("Rifki");
+      person.add("Rifki");
+      person.add("Muhazzar");
+      person.add("Frontend");
+
+      console.info(person);
+
+      person.forEach((value) => console.info(value));
+    </script>
+  </body>
+</html>

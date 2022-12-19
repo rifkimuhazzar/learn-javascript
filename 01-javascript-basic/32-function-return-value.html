@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      function whoAmI(firstName, lastName, webDeveloper) {
+        const me = `Hello ${firstName} ${lastName} ${webDeveloper}`;
+        return me;
+      }
+      const i = whoAmI("Rifki", "Muhazzar", "Front-End");
+      document.writeln(`<p>${i}</p>`);
+
+      // 2
+      function getValue(value) {
+        if (value >= 90) {
+          return "A";
+        } else if (value >= 80) {
+          return "B";
+        } else if (value >= 70) {
+          return "C";
+        } else {
+          return "D";
+        }
+      }
+      const value = getValue(87);
+      document.writeln(`<p>${value}</p>`);
+
+      // 3
+      function isContains(array, search) {
+        for (const element of array) {
+          console.info(`Element - ${element}`);
+          if (element === search) {
+            return "true";
+          }
+        }
+        return false;
+      }
+      const array = [1, 2, 3, 4, 5, 6, 7, 9, 8, 7];
+      const search = 7;
+      const result = isContains(array, search);
+      document.writeln(`<p>${result}</p>`);
+    </script>
+  </body>
+</html>

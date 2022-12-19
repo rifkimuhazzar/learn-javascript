@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Logika</title>
+  </head>
+  <body>
+    <script>
+      // && (and)
+      let nilaiUjian = 86;
+      let nilaiAbsensi = 100;
+      let lulusUjian = nilaiUjian >= 78;
+      let lulusAbsensi = nilaiAbsensi >= 80;
+      let lulus = lulusUjian && lulusAbsensi;
+      document.writeln("<p>" + lulus + "<p>");
+
+      // || (or)
+      nilaiUjian = 86;
+      nilaiAbsensi = 78;
+      lulusUjian = nilaiUjian >= 70;
+      lulusAbsensi = nilaiAbsensi >= 80;
+      lulus = lulusUjian || lulusAbsensi;
+      document.writeln("<p>" + lulus + "<p>");
+
+      // ! (inverse)
+      nilaiUjian = 86;
+      nilaiAbsensi = 100;
+      lulusUjian = nilaiUjian >= 78;
+      lulusAbsensi = nilaiAbsensi >= 80;
+      lulus = lulusUjian && lulusAbsensi;
+      document.writeln("<p>" + !lulus + "<p>");
+    </script>
+  </body>
+</html>

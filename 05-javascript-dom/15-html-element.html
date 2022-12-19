@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Element</title>
+  </head>
+  <body>
+    <a id="github-link"></a>
+
+    <script>
+      // menambahkan attribute/text tanpa setAttribute/getAttribtue, karena ini bawaan dari HTML Element
+      let link = document.getElementById("github-link");
+      link.href = "https://github.com";
+      link.target = "_blank";
+      link.innerHTML = "GitHub";
+    </script>
+  </body>
+</html>

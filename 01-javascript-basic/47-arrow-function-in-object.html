@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // arrow function in object
+      const person = {
+        name: "Rifki",
+        sayHello: (name) => {
+          // this akan merujuk ke window karena arrow function tidak mendukung this
+          console.log(this);
+          console.info(`Hello ${name}, i am ${person.name}`);
+        },
+      };
+      person.sayHello("A");
+    </script>
+  </body>
+</html>

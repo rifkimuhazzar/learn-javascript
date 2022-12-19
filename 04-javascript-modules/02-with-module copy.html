@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With Modules</title>
+  </head>
+  <body>
+    <!-- masukan type module untuk mengimport javascript module -->
+    <script type="module">
+      // gunakan import isi apa saja yg di export dari module
+      // from isi lokasi filenya
+      import { sayHello, sayGoodBye, name } from "/scripts/02-say.js";
+
+      sayHello("Rifki");
+      sayGoodBye("Rifki");
+
+      console.info(name);
+    </script>
+  </body>
+</html>

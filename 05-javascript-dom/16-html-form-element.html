@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form Element</title>
+  </head>
+  <body>
+    <form name="comment-form">
+      <label> Name: <input type="text" name="name" id="name" /> </label>
+      <br />
+
+      <label>
+        Comment: <input type="text" name="comment" id="comment" />
+      </label>
+      <br />
+
+      <button id="btn" value="btn">Send</button>
+    </form>
+
+    <div id="comment-lists"></div>
+
+    <script>
+      // document.querySelector("form[name=comment-form]").onsubmit = function (
+      //   event
+      // ) {
+      //   event.preventDefault();
+
+      //   const name = document.getElementById("name").value;
+      //   const comment = document.getElementById("comment").value;
+      //   const commentList = document.getElementById("comment-lists");
+
+      //   const addElement = document.createElement("p");
+      //   addElement.innerText = `${name} : ${comment}`;
+
+      //   commentList.appendChild(addElement);
+
+      //   document.querySelector("form[name=comment-form]").reset();
+      // };
+
+      // akses form via name, lebih simple, tanpa menggunakan querySelector/getElement lagi
+      document.forms["comment-form"].onsubmit = function (event) {
+        event.preventDefault();
+
+        const name = document.forms["comment-form"]["name"].value;
+        const comment = document.forms["comment-form"]["comment"].value;
+        const commentList = document.getElementById("comment-lists");
+
+        const addElement = document.createElement("p");
+        addElement.innerText = `${name} : ${comment}`;
+
+        commentList.appendChild(addElement);
+
+        document.forms["comment-form"].reset();
+      };
+    </script>
+  </body>
+</html>

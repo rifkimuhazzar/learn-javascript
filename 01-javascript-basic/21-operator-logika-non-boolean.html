@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Logika non Boolean</title>
+  </head>
+  <body>
+    <script>
+      // || (or) // mengambil truthy yang pertama, jika false semua maka nilai terakhir yang di ambil
+      console.info("" || 2);
+
+      let nilai;
+      let presensi = "";
+      let result = nilai || presensi;
+      console.info(result);
+
+      // && (and) // mengambil falsy yang pertama, jika true semua maka nilai terakhir yang di ambil
+      console.info(null && 2);
+      console.info(!null && 2);
+      console.info("2" && 5);
+
+      // ! (inverse) // membalikkan nilai boolean
+      console.info(!false);
+    </script>
+  </body>
+</html>
